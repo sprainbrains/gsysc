@@ -78,54 +78,54 @@
 	#endif
 	if(aktLine.find("//") != string::npos)
 	  aktLine = aktLine.substr(0,aktLine.find("//")-1);
-	if(aktLine.substr(0,15).compare("backgroundColor") == 0) 
+	if(aktLine.substr(0,15).compare("backgroundColor") == 0)
 	  if(aktLine.substr(16,7).length() == 7) { backgroundColor = new char[8]; strncpy(backgroundColor,(char*) aktLine.substr(16,7).data(),7); backgroundColor[7]='\0'; }
-	if(aktLine.substr(0,11).compare("moduleColor") == 0) 
+	if(aktLine.substr(0,11).compare("moduleColor") == 0)
 	  if(aktLine.substr(12,7).length() == 7) { moduleColor = new char[8]; strncpy(moduleColor,(char*) aktLine.substr(12,7).data(),7); moduleColor[7]='\0'; }
-	if(aktLine.substr(0,15).compare("moduleWithChild") == 0) 
+	if(aktLine.substr(0,15).compare("moduleWithChild") == 0)
 	  if(aktLine.substr(16,7).length() == 7) { moduleWithChild = new char[8]; strncpy(moduleWithChild,(char*) aktLine.substr(16,7).data(),7); moduleWithChild[7]='\0'; }
-	if(aktLine.substr(0,12).compare("normalSignal") == 0) 
+	if(aktLine.substr(0,12).compare("normalSignal") == 0)
 	  if(aktLine.substr(13,7).length() == 7) { normalSignal = new char[8]; strncpy(normalSignal,(char*) aktLine.substr(13,7).data(),7); normalSignal[7]='\0'; }
-	if(aktLine.substr(0,10).compare("normalNode") == 0) 
+	if(aktLine.substr(0,10).compare("normalNode") == 0)
 	  if(aktLine.substr(11,7).length() == 7) { normalNode = new char[8]; strncpy(normalNode,(char*) aktLine.substr(11,7).data(),7); normalNode[7]='\0'; }
-	if(aktLine.substr(0,9).compare("textColor") == 0) 
+	if(aktLine.substr(0,9).compare("textColor") == 0)
 	  if(aktLine.substr(10,7).length() == 7) { textColor = new char[8]; strncpy(textColor,(char*) aktLine.substr(10,7).data(),7); textColor[7]='\0'; }
-	if(aktLine.substr(0,12).compare("activeSignal") == 0) 
+	if(aktLine.substr(0,12).compare("activeSignal") == 0)
 	  if(aktLine.substr(13,7).length() == 7) { activeSignal = new char[8]; strncpy(activeSignal,(char*) aktLine.substr(13,7).data(),7); activeSignal[7]='\0'; }
-	if(aktLine.substr(0,13).compare("changedSignal") == 0) 
+	if(aktLine.substr(0,13).compare("changedSignal") == 0)
 	  if(aktLine.substr(14,7).length() == 7) { changedSignal = new char[8]; strncpy(changedSignal,(char*) aktLine.substr(14,7).data(),7); changedSignal[7]='\0'; }
-	if(aktLine.substr(0,16).compare("activeChangedSig") == 0) 
+	if(aktLine.substr(0,16).compare("activeChangedSig") == 0)
 	  if(aktLine.substr(17,7).length() == 7) { activeChangedSig = new char[8]; strncpy(activeChangedSig,(char*) aktLine.substr(17,7).data(),7); activeChangedSig[7]='\0'; }
-	if(aktLine.substr(0,6).compare("inPort") == 0) 
+	if(aktLine.substr(0,6).compare("inPort") == 0)
 	  if(aktLine.substr(7,7).length() == 7) { inPort = new char[8]; strncpy(inPort,(char*) aktLine.substr(7,7).data(),7); inPort[7]='\0'; }
-	if(aktLine.substr(0,7).compare("outPort") == 0) 
+	if(aktLine.substr(0,7).compare("outPort") == 0)
 	  if(aktLine.substr(8,7).length() == 7) { outPort = new char[8]; strncpy(outPort,(char*) aktLine.substr(8,7).data(),7); outPort[7]='\0'; }
-	if(aktLine.substr(0,9).compare("inoutPort") == 0) 
+	if(aktLine.substr(0,9).compare("inoutPort") == 0)
 	  if(aktLine.substr(10,7).length() == 7) { inoutPort = new char[8]; strncpy(inoutPort,(char*) aktLine.substr(10,7).data(),7); inoutPort[7]='\0'; }
-	if(aktLine.substr(0,15).compare("mmHierConnColor") == 0) 
+	if(aktLine.substr(0,15).compare("mmHierConnColor") == 0)
 	  if(aktLine.substr(16,7).length() == 7) { mmHierConnColor = new char[8]; strncpy(mmHierConnColor,(char*) aktLine.substr(16,7).data(),7); mmHierConnColor[7]='\0'; }
-	
-	if(aktLine.substr(0,14).compare("mmHierConnShow") == 0) 
+
+	if(aktLine.substr(0,14).compare("mmHierConnShow") == 0)
 	  if(atoi(aktLine.substr(15,1).data()) > 0) { mmHierConnShow = (atoi((const char*) (aktLine.substr(15,1).data())) > 0); }
-	if(aktLine.substr(0,13).compare("mmSigPortShow") == 0) 
+	if(aktLine.substr(0,13).compare("mmSigPortShow") == 0)
 	  if(atoi(aktLine.substr(14,1).data()) > 0) { mmSigPortShow = (atoi((const char*) (aktLine.substr(11,4).data())) > 0); }
-	if(aktLine.substr(0,10).compare("sideMargin") == 0) 
+	if(aktLine.substr(0,10).compare("sideMargin") == 0)
 	  if(atoi(aktLine.substr(11,4).data()) > 0) { sideMargin = atoi((const char*) (aktLine.substr(11,4).data())); }
-	if(aktLine.substr(0,9).compare("topMargin") == 0) 
+	if(aktLine.substr(0,9).compare("topMargin") == 0)
 	  if(atoi(aktLine.substr(10,4).data()) > 0) { topMargin = atoi((const char*) (aktLine.substr(10,4).data())); }
-	if(aktLine.substr(0,15).compare("horizontalSpace") == 0) 
-	  if(atoi(aktLine.substr(16,4).data()) > 0) { 
-	    horizontalSpace = atoi((const char*) (aktLine.substr(16,4).data())); 
+	if(aktLine.substr(0,15).compare("horizontalSpace") == 0)
+	  if(atoi(aktLine.substr(16,4).data()) > 0) {
+	    horizontalSpace = atoi((const char*) (aktLine.substr(16,4).data()));
 	    if(horizontalSpace % 2 == 0) horizontalSpace++;
 	  }
-	if(aktLine.substr(0,13).compare("verticalSpace") == 0) 
-	  if(atoi(aktLine.substr(14,4).data()) > 0) { 
-	    verticalSpace = atoi((const char*) (aktLine.substr(14,4).data())); 
+	if(aktLine.substr(0,13).compare("verticalSpace") == 0)
+	  if(atoi(aktLine.substr(14,4).data()) > 0) {
+	    verticalSpace = atoi((const char*) (aktLine.substr(14,4).data()));
 	    if(verticalSpace % 2 == 0) verticalSpace++;
 	  }
-	if(aktLine.substr(0,11).compare("moduleWidth") == 0) 
+	if(aktLine.substr(0,11).compare("moduleWidth") == 0)
 	  if(atoi(aktLine.substr(12,4).data()) > 0) { moduleWidth = atoi((const char*) (aktLine.substr(12,4).data())); }
-	if(aktLine.substr(0,12).compare("moduleHeight") == 0) 
+	if(aktLine.substr(0,12).compare("moduleHeight") == 0)
 	  if(atoi(aktLine.substr(13,4).data()) > 0) { moduleHeight = atoi((const char*) (aktLine.substr(13,4).data())); }
       }
       fclose(fp);
@@ -180,9 +180,9 @@
     cout<<"\tmmHierConnShow="<<mmHierConnShow<<endl;
     cout<<"\tmmHierConnColor="<<mmHierConnColor<<endl;
     #endif
-    if(mmSigPortShow || mmHierConnShow) 
+    if(mmSigPortShow || mmHierConnShow)
       { canvasView->setMouseTracking( true ); canvasView->viewport()->setMouseTracking( true ); }
-    else 
+    else
       { canvasView->setMouseTracking( false ); canvasView->viewport()->setMouseTracking( false ); }
   }
 
@@ -202,18 +202,18 @@
     readConfig();
     canvasView->setMM(mmSigPortShow, mmHierConnShow, mmHierConnColor, moduleColor, moduleWithChild);
 
-    if (!name) 
-    { 
+    if (!name)
+    {
       setObjectName("HierarchyWindow");
       QWidget::setWindowTitle( name );
-    }  
+    }
 
     if(mmSigPortShow || mmHierConnShow)
     {
       moveInfos = new QGroupBox(this);
       moveInfosLayout = new QHBoxLayout( moveInfos );
       moveInfosLayout->layout()->setSpacing( 6 );
-      moveInfosLayout->layout()->setMargin( 11 );
+      moveInfosLayout->layout()->setContentsMargins( 11, 11, 11, 11);
       moveInfosLayout->setAlignment( Qt::AlignTop );
       labelKoordinaten = new QLabel("labelKoordinaten", moveInfos);
       coord = new QLineEdit("coord", moveInfos);
@@ -234,12 +234,12 @@
       moveInfosLayout->addWidget( labelWert );
       moveInfosLayout->addWidget( lineEditWert );
     }
-    
+
     saveButton = new QPushButton("saveButton", this);
-    
+
     hierWinLayout = new QVBoxLayout(this);
     hierWinLayout->layout()->setSpacing( 6 );
-    hierWinLayout->layout()->setMargin( 11 );
+    hierWinLayout->layout()->setContentsMargins(11, 11, 11, 11);
     hierWinLayout->addWidget(canvasView);
     hierWinLayout->addWidget(saveButton);
 
@@ -298,7 +298,7 @@
    *   eventHandler for Button 'save graphics'
    */
   void gsysHierarchyWindow::saveButton_clicked()
-  { 
+  {
     try {
       QFileDialog *fd = new QFileDialog(this,tr("Save file"));
       fd->setModal(true);
@@ -307,7 +307,7 @@
       fd->selectFile(tr("Save image"));
 	  QString fileTypes = "PNG (*.png *.PNG);;BMP (*.bmp *.BMP);;XBM (*.xbm *.XBM);;XPM (*.xpm *.XPM);;PNM (*.pnm *.PNM);;SVG (*.svg *.SVG)";
 	  QString filename = fd->getSaveFileName(this, tr("Save File"), "/Save image.png", fileTypes);
-      if((fopen(filename.toLocal8Bit().constData(),"r")!=0 && QMessageBox::warning(this,"gSysC",tr("The chosen file does already exist.\nAre you sure you want to overwrite it?"),QMessageBox::Yes,QMessageBox::No)==QMessageBox::Yes) || fopen(filename.toLocal8Bit().constData(),"r")==0) 
+      if((fopen(filename.toLocal8Bit().constData(),"r")!=0 && QMessageBox::warning(this,"gSysC",tr("The chosen file does already exist.\nAre you sure you want to overwrite it?"),QMessageBox::Yes,QMessageBox::No)==QMessageBox::Yes) || fopen(filename.toLocal8Bit().constData(),"r")==0)
 	  {
 		std::string type = filename.toStdString().substr(filename.size() - 3).c_str();
 		std::transform(type.begin(), type.end(), type.begin(), [](unsigned char c){ return std::toupper(c); });
@@ -320,7 +320,7 @@
 	  	  qp.begin(pic);
 	  	  canvasView->scene()->render(&qp, canvasView->scene()->sceneRect());
 	  	  qp.end();
-	  	  pic->save(filename,"svg");
+	  	  pic->save(filename + "svg");
 	  	  cout<<"saving done."<<endl;
 	  	  delete pic;
 	  	  pic = 0;
@@ -332,10 +332,10 @@
 	  	     fileType=="XBM" ||
 	  	     fileType=="XPM" ||
 	  	     fileType=="PNM")
-	  		{   
+	  		{
 	  		  cout<<"-- Saving structure graphics in file; "<<fileType.toLocal8Bit().constData()<<"-format --"<<endl;
 	  		  QPixmap *pm = new QPixmap();
-	  		  *pm = QPixmap::grabWidget(canvasView->viewport());
+	  		  *pm = QWidget::grab((canvasView->viewport())->rect());
 	  		  if(pm==0) cout<<"Error: Cannot grab viewport!"<<endl;
 	  		  pm->save(filename,fileType.toLocal8Bit().constData());
 	  		  cout<<"saving done."<<endl;
@@ -345,15 +345,15 @@
 	  		else QMessageBox::critical(this,"gSysC",tr("You have not given a valid file type. \n\n Please choose a file type of a valid image format!"),QMessageBox::Ok,0);
 	  	}
 	  }
-      
+
       delete fd;
       fd = 0;
     }
     catch(int e) {
-      QMessageBox::critical(this, "gSysC", QString(tr("An error occured.\n\nMaybe the file cannot be written, because you don't have sufficient file system privileges!\n\nThe program returns error code ")).append(e));
+      QMessageBox::critical(this, "gSysC", QString(tr("An error occured.\n\nMaybe the file cannot be written, because you don't have sufficient file system privileges!\n\nThe program returns error code ")).append(QChar(e)));
     }
   }
- 
+
   /*
    *   get status, whether this class is initialized, i.e. the module
    *   this window should represent is set to the (mem)address of that module
@@ -366,7 +366,7 @@
   /*
    *   method to normalize the locale relation of the drawn modules, i.e.
    *   errors because of the rectangular form of the modules are killed
-   *   and modules can work with relations calculated with squares 
+   *   and modules can work with relations calculated with squares
    */
   QPoint* gsysHierarchyWindow::normalize(QPoint *p)
   {
@@ -405,7 +405,7 @@
     {
       hierarchyList = ownHierarchy->getChildren();
     }
-    
+
     #ifdef DEBUG_GSYSC
     cout<<"    all modules of this level: "<<endl;
     for(int o=0; o<hierarchyList.size(); o++)
@@ -426,14 +426,14 @@
 	#endif
 	for(int u=0; u<connList.size(); u++)
 	  if(connList[u]==allConnections[i]) found=true;
-        if (!found) 
+        if (!found)
 	{
 	  #ifdef DEBUG_GSYSC
 	  cout << "Address of this: " << this << endl;
 	  #endif
 	  allConnections[i]->setParentWindow(this);
 	  connList.push_back(allConnections[i]);
-	}  
+	}
       }
       else    	// at least one hierarchy is not in this level
       {
@@ -470,7 +470,7 @@
       modRect.push_back(new QGraphicsRectItem(0,0,moduleWidth,moduleHeight));
       hierarchyList[i]->setHierRect(modRect.back());
       modText.push_back(new QGraphicsSimpleTextItem());
-      
+
       // draw module
       if(hierarchyList[i]->getChildren().size()>0)
       {
@@ -496,17 +496,17 @@
       modText[i]->setX(x+(int) (0.5*(double)moduleWidth-0.5*(double)textRect.width()));
       modText[i]->setY(y+ (int) (0.5*(double)moduleHeight-0.5*(double)textRect.height()));
       modText[i]->setZValue(240);
-      modText[i]->show(); 
+      modText[i]->show();
 
-	  canvasView->scene()->addItem(modText[i]);	
+	  canvasView->scene()->addItem(modText[i]);
 	  canvasView->scene()->addItem(modRect[i]);
 
       // Coordinates of the next module
       x = x+horizontalSpace+moduleWidth;
-      if (x > sideMargin+(dimFactor-1)*moduleWidth+(dimFactor-1)*horizontalSpace) 
+      if (x > sideMargin+(dimFactor-1)*moduleWidth+(dimFactor-1)*horizontalSpace)
       {
         x = sideMargin;
-		y = y+verticalSpace+moduleHeight; 
+		y = y+verticalSpace+moduleHeight;
       }
     }
 
@@ -530,12 +530,12 @@
       for(int si1=0; si1<sigList.size(); si1++)
         cout<<"\t"<<sigList[si1]->getName()<<endl;
       #endif
-      if (steigung == N) 
+      if (steigung == N)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
 	#endif
-	if((connList[co]->getHier1()->getCenterPoint()->x() > sideMargin+(dimFactor-1)*(moduleWidth+horizontalSpace)) || 
+	if((connList[co]->getHier1()->getCenterPoint()->x() > sideMargin+(dimFactor-1)*(moduleWidth+horizontalSpace)) ||
 	   (connList[co]->getHier1()->getCenterPoint()->x() - (int) ceil((double)moduleWidth*0.5) > sideMargin &&
 	    connList[co]->getHier1()->getWPorts().size() + connList[co]->getHier2()->getWPorts().size() <
 	    connList[co]->getHier1()->getEPorts().size() + connList[co]->getHier2()->getEPorts().size()))
@@ -566,7 +566,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addNPort(sigList[si],W);
 	          else connList[co]->getHier1()->addWPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier2()->getSPorts().size() < connList[co]->getHier2()->getWPorts().size())
 	      connList[co]->getHier2()->addSPort(sigList[si],W);
 	    else
@@ -580,7 +580,7 @@
 	          else connList[co]->getHier2()->addWPort(sigList[si],S);
 	        }
 	  }
-	  else	// case: !lu	
+	  else	// case: !lu
 	  {
 	    if(connList[co]->getHier1()->getNPorts().size() < connList[co]->getHier1()->getEPorts().size())
 	      connList[co]->getHier1()->addNPort(sigList[si],E);
@@ -593,7 +593,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addNPort(sigList[si],E);
 	          else connList[co]->getHier1()->addEPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier2()->getSPorts().size() < connList[co]->getHier2()->getEPorts().size())
 	      connList[co]->getHier2()->addSPort(sigList[si],E);
 	    else
@@ -606,10 +606,10 @@
 	          if(rand1 >= 0.5) connList[co]->getHier2()->addSPort(sigList[si],E);
 	          else connList[co]->getHier2()->addEPort(sigList[si],S);
 	        }
-	  }	
+	  }
 	}
-      }	
-      if (steigung == NNE || steigung == NE || steigung == ENE) 
+      }
+      if (steigung == NNE || steigung == NE || steigung == ENE)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
@@ -629,7 +629,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addNPort(sigList[si],E);
 	          else connList[co]->getHier1()->addEPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier2()->getSPorts().size() < connList[co]->getHier2()->getWPorts().size())
 	      connList[co]->getHier2()->addSPort(sigList[si],W);
 	    else
@@ -643,8 +643,8 @@
 	          else connList[co]->getHier2()->addWPort(sigList[si],S);
 	        }
 	}
-      }	
-      if (steigung == E) 
+      }
+      if (steigung == E)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
@@ -678,7 +678,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addNPort(sigList[si],E);
 	          else connList[co]->getHier1()->addEPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier2()->getNPorts().size() < connList[co]->getHier2()->getWPorts().size())
 	      connList[co]->getHier2()->addNPort(sigList[si],W);
 	    else
@@ -691,8 +691,8 @@
 	          if(rand1 >= 0.5) connList[co]->getHier2()->addNPort(sigList[si],W);
 	          else connList[co]->getHier2()->addWPort(sigList[si],N);
 	        }
-	  }	
-	  else	// case: !lu	
+	  }
+	  else	// case: !lu
 	  {
 	    if(connList[co]->getHier1()->getSPorts().size() < connList[co]->getHier1()->getEPorts().size())
 	      connList[co]->getHier1()->addSPort(sigList[si],E);
@@ -705,7 +705,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addSPort(sigList[si],E);
 	          else connList[co]->getHier1()->addEPort(sigList[si],S);
-		}  
+		}
 	    if(connList[co]->getHier2()->getSPorts().size() < connList[co]->getHier2()->getWPorts().size())
 	      connList[co]->getHier2()->addSPort(sigList[si],W);
 	    else
@@ -718,10 +718,10 @@
 	          if(rand1 >= 0.5) connList[co]->getHier2()->addSPort(sigList[si],W);
 	          else connList[co]->getHier2()->addWPort(sigList[si],S);
 	        }
-	  }	
+	  }
 	}
       }
-      if (steigung == ESE || steigung == SE || steigung == SSE) 
+      if (steigung == ESE || steigung == SE || steigung == SSE)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
@@ -741,7 +741,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addSPort(sigList[si],E);
 	          else connList[co]->getHier1()->addEPort(sigList[si],S);
-		}  
+		}
 	    if(connList[co]->getHier2()->getNPorts().size() < connList[co]->getHier2()->getWPorts().size())
 	      connList[co]->getHier2()->addNPort(sigList[si],W);
 	    else
@@ -756,12 +756,12 @@
 	        }
 	}
       }
-      if (steigung == S) 
+      if (steigung == S)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
 	#endif
-	if((connList[co]->getHier1()->getCenterPoint()->x() > sideMargin+(dimFactor-1)*(moduleWidth+horizontalSpace)) || 
+	if((connList[co]->getHier1()->getCenterPoint()->x() > sideMargin+(dimFactor-1)*(moduleWidth+horizontalSpace)) ||
 	   (connList[co]->getHier1()->getCenterPoint()->x() - (int) ceil((double)moduleWidth*0.5) > sideMargin &&
 	    connList[co]->getHier1()->getWPorts().size() + connList[co]->getHier2()->getWPorts().size() <
 	    connList[co]->getHier1()->getEPorts().size() + connList[co]->getHier2()->getEPorts().size()))
@@ -792,7 +792,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier2()->addNPort(sigList[si],W);
 	          else connList[co]->getHier2()->addWPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier1()->getSPorts().size() < connList[co]->getHier1()->getWPorts().size())
 	      connList[co]->getHier1()->addSPort(sigList[si],W);
 	    else
@@ -805,8 +805,8 @@
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addSPort(sigList[si],W);
 	          else connList[co]->getHier1()->addWPort(sigList[si],S);
 	        }
-	  }	
-	  else	// case: !lu	
+	  }
+	  else	// case: !lu
 	  {
 	    if(connList[co]->getHier2()->getNPorts().size() < connList[co]->getHier2()->getEPorts().size())
 	      connList[co]->getHier2()->addNPort(sigList[si],E);
@@ -819,7 +819,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier2()->addNPort(sigList[si],E);
 	          else connList[co]->getHier2()->addEPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier1()->getSPorts().size() < connList[co]->getHier1()->getEPorts().size())
 	      connList[co]->getHier1()->addSPort(sigList[si],E);
 	    else
@@ -832,10 +832,10 @@
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addSPort(sigList[si],E);
 	          else connList[co]->getHier1()->addEPort(sigList[si],S);
 	        }
-	  }	
+	  }
 	}
       }
-      if (steigung == SSW || steigung == SW || steigung == WSW) 
+      if (steigung == SSW || steigung == SW || steigung == WSW)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
@@ -855,7 +855,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addSPort(sigList[si],W);
 	          else connList[co]->getHier1()->addWPort(sigList[si],S);
-		}  
+		}
 	    if(connList[co]->getHier2()->getNPorts().size() < connList[co]->getHier2()->getEPorts().size())
 	      connList[co]->getHier2()->addNPort(sigList[si],E);
 	    else
@@ -869,8 +869,8 @@
 	          else connList[co]->getHier2()->addEPort(sigList[si],N);
 	        }
 	}
-      }	
-      if (steigung == W) 
+      }
+      if (steigung == W)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
@@ -904,7 +904,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier2()->addNPort(sigList[si],E);
 	          else connList[co]->getHier2()->addEPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier1()->getNPorts().size() < connList[co]->getHier1()->getWPorts().size())
 	      connList[co]->getHier1()->addNPort(sigList[si],W);
 	    else
@@ -917,7 +917,7 @@
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addNPort(sigList[si],W);
 	          else connList[co]->getHier1()->addWPort(sigList[si],N);
 	        }
-	  }	
+	  }
 	  else	// case: !lu
 	  {
 	    if(connList[co]->getHier2()->getSPorts().size() < connList[co]->getHier2()->getEPorts().size())
@@ -931,7 +931,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier2()->addSPort(sigList[si],E);
 	          else connList[co]->getHier2()->addEPort(sigList[si],S);
-		}  
+		}
 	    if(connList[co]->getHier1()->getSPorts().size() < connList[co]->getHier1()->getWPorts().size())
 	      connList[co]->getHier1()->addSPort(sigList[si],W);
 	    else
@@ -944,10 +944,10 @@
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addSPort(sigList[si],W);
 	          else connList[co]->getHier1()->addWPort(sigList[si],S);
 	        }
-	  }	
+	  }
 	}
       }
-      if (steigung == WNW || steigung == NW || steigung == NNW) 
+      if (steigung == WNW || steigung == NW || steigung == NNW)
       {
         #ifdef DEBUG_GSYSC
         std::cout<<connList[co]->getHier1()->getName()<<" and "<<connList[co]->getHier2()->getName()<<" lie to each other in sector \t"<<steigung<<std::endl;
@@ -967,7 +967,7 @@
 	          rand1 = rand()/RAND_MAX;
 	          if(rand1 >= 0.5) connList[co]->getHier1()->addNPort(sigList[si],W);
 	          else connList[co]->getHier1()->addWPort(sigList[si],N);
-		}  
+		}
 	    if(connList[co]->getHier2()->getSPorts().size() < connList[co]->getHier2()->getEPorts().size())
 	      connList[co]->getHier2()->addSPort(sigList[si],E);
 	    else
@@ -986,7 +986,7 @@
 
 
     // Port arrangements left and right for contact to the world outside ...
-    if (ownHierarchy!=0) 
+    if (ownHierarchy!=0)
     {
       for (int i=0; i<sideConnList.size(); i++)
       {
@@ -998,54 +998,54 @@
 	    #ifdef DEBUG_GSYSC
 	    cout<<"SideConnList.size()="<<sideConnList.size()<<",  sideConnList[i]->getSignals().size()="<<sideConnList[i]->getSignals().size()<<endl;
 	    #endif
-	    if(sideConnList[i]->getHier1()==ownHierarchy) 
+	    if(sideConnList[i]->getHier1()==ownHierarchy)
 	    {
 	      sideConnList[i]->getHier2()->addWPort(sideConnList[i]->getSignals()[o],QPoint());
 	      ownHierarchy->addLeftPort(sideConnList[i]->getSignals()[o]);
 	      ownHierarchy->getLeftPorts()[ownHierarchy->getLeftPorts().size()-1]->hVar = sideConnList[i]->getHier2()->getCenterPoint()->y()+o+1;
-	    }  
-	    else  
+	    }
+	    else
 	    {
 	      sideConnList[i]->getHier1()->addWPort(sideConnList[i]->getSignals()[o],QPoint());
 	      ownHierarchy->addLeftPort(sideConnList[i]->getSignals()[o]);
 	      ownHierarchy->getLeftPorts()[ownHierarchy->getLeftPorts().size()-1]->hVar = sideConnList[i]->getHier1()->getCenterPoint()->y()+o+1;
-	    }  
+	    }
 	  }
 	}
 	else	// Module on the right; all others should be connected through sideConnList (see above)
 	{
 	  for(int o=0; o<sideConnList[i]->getSignals().size(); o++)
 	  {
-	    if(sideConnList[i]->getHier1()==ownHierarchy) 
+	    if(sideConnList[i]->getHier1()==ownHierarchy)
 	    {
 	      sideConnList[i]->getHier2()->addEPort(sideConnList[i]->getSignals()[o],QPoint());
 	      ownHierarchy->addRightPort(sideConnList[i]->getSignals()[o]);
 	      ownHierarchy->getRightPorts()[ownHierarchy->getRightPorts().size()-1]->hVar = sideConnList[i]->getHier2()->getCenterPoint()->y()+o+1;
-	    }  
-	    else  
+	    }
+	    else
 	    {
 	      sideConnList[i]->getHier1()->addEPort(sideConnList[i]->getSignals()[o],QPoint());
 	      ownHierarchy->addRightPort(sideConnList[i]->getSignals()[o]);
 	      ownHierarchy->getRightPorts()[ownHierarchy->getRightPorts().size()-1]->hVar = sideConnList[i]->getHier1()->getCenterPoint()->y()+o+1;
-	    }  
+	    }
 	  }
 	}
       }
       ownHierarchy->sortSidePorts();
-    
+
 
       // draw port arrangements left and right ...
       int abstandY = (int) floor( (2*(double)topMargin+(double)dimFactor*(double)moduleHeight
-      					+((double)dimFactor-1)*(double)verticalSpace 
-      					- ownHierarchy->getLeftPorts().size() * 21) 
+      					+((double)dimFactor-1)*(double)verticalSpace
+      					- ownHierarchy->getLeftPorts().size() * 21)
 			  	  / (double)(ownHierarchy->getLeftPorts().size()+1) );      // distances between ports at equidistant distribution
-      cout<<"AbstandY ist "<<abstandY<<";  Zaehler: "<<(2*(double)topMargin+(double)dimFactor*(double)moduleHeight +((double)dimFactor-1)*(double)verticalSpace - ownHierarchy->getLeftPorts().size() * 21)<<" / Nenner: "<<(double)(ownHierarchy->getLeftPorts().size()+1)<<"    <->   getLeftPorts().size()="<<ownHierarchy->getLeftPorts().size()<<endl;		     
+      cout<<"AbstandY ist "<<abstandY<<";  Zaehler: "<<(2*(double)topMargin+(double)dimFactor*(double)moduleHeight +((double)dimFactor-1)*(double)verticalSpace - ownHierarchy->getLeftPorts().size() * 21)<<" / Nenner: "<<(double)(ownHierarchy->getLeftPorts().size()+1)<<"    <->   getLeftPorts().size()="<<ownHierarchy->getLeftPorts().size()<<endl;
       for(int i=0; i<ownHierarchy->getLeftPorts().size(); i++)
       {
         cout<<"LeftPorts().size()="<<ownHierarchy->getLeftPorts().size()<<";  i="<<i<<endl;
 	drawSidePort(ownHierarchy->getLeftPorts()[i],true,i,abstandY);
       }
-    
+
       int donePortsL = 0;
       int donePortsR = 0;
       for(int i=0; i<hierarchyList.size(); i++)
@@ -1062,7 +1062,7 @@
 	    hierarchyList[i]->getEPorts()[o]->setDest(QPoint(canvasView->scene()->width()-51,(donePortsR+o+1)*abstandY+(donePortsR+o)*21+11));
 	  donePortsR += hierarchyList[i]->getEPorts().size();
 	}
-      
+
       }
     }
 
@@ -1071,7 +1071,7 @@
     for(int i=0; i<hierarchyList.size(); i++)
     {
       drawNetConns(hierarchyList[i]);
-    }	
+    }
 
     drawConnections();
 
@@ -1147,7 +1147,7 @@
 		pa[1] = QPoint(x+6,y+2);
 		pa[2] = QPoint(x+6,y+7);
 		pa[3] = QPoint(x+3,y+9);
-		pa[4] = QPoint(x,y+7); 
+		pa[4] = QPoint(x,y+7);
 		pa[5] = QPoint(x,y+2);
 		polygons[polygons.size()-1]->setPolygon(pa);
 		polygons[polygons.size()-1]->setPen(QPen(QColor(inoutPort)));
@@ -1165,17 +1165,17 @@
         lines.back()->show();
 		canvasView->scene()->addItem(lines.back());
         lines.push_back(new QGraphicsLineItem());
-        if (ports[i]->getInitDir() == W) 
+        if (ports[i]->getInitDir() == W)
           lines.back()->setLine(x+3,y-((verticalSpace-16)/2),hier->getCenterPoint()->x()-(int)floor((double)moduleWidth*0.5)-(int)floor((double)horizontalSpace*0.5),y-((verticalSpace-16)/2));
-        else	
+        else
           lines.back()->setLine(x+3,y-((verticalSpace-16)/2),hier->getCenterPoint()->x()+(int)ceil((double)moduleWidth*0.5)+(int)floor((double)horizontalSpace*0.5),y-((verticalSpace-16)/2));
         ports[i]->addLineElem((QAbstractGraphicsShapeItem*)lines.back());
         lines.back()->show();
 		canvasView->scene()->addItem(lines.back());
-      }	
-      x += 7;	
+      }
+      x += 7;
     }
-    
+
     x = hier->getCenterPoint()->x() - (int) ceil((double)moduleWidth*0.5)+1;
     y = hier->getCenterPoint()->y() + (int) floor((double)moduleHeight*0.5);;
     ports = hier->getSPorts();
@@ -1234,7 +1234,7 @@
 		pa[1] = QPoint(x+6,y-2);
 		pa[2] = QPoint(x+6,y-7);
 		pa[3] = QPoint(x+3,y-9);
-		pa[4] = QPoint(x,y-7); 
+		pa[4] = QPoint(x,y-7);
 		pa[5] = QPoint(x,y-2);
 		polygons[polygons.size()-1]->setPolygon(pa);
 		polygons[polygons.size()-1]->setPen(QPen(QColor(inoutPort)));
@@ -1244,7 +1244,7 @@
 		canvasView->scene()->addItem(polygons[polygons.size()-1]);
 		ports[i]->addLineElem(polygons.back());
       }
-      
+
       if(!ports[i]->isEndPort())
       {
         lines.push_back(new QGraphicsLineItem());
@@ -1253,17 +1253,17 @@
         lines.back()->show();
 		canvasView->scene()->addItem(lines.back());
         lines.push_back(new QGraphicsLineItem());
-        if (ports[i]->getInitDir() == W) 
+        if (ports[i]->getInitDir() == W)
           lines.back()->setLine(x+3,y+((verticalSpace-16)/2),hier->getCenterPoint()->x()-(int)floor((double)moduleWidth*0.5)-(int)floor((double)horizontalSpace*0.5),y+((verticalSpace-16)/2));
-        else	
+        else
           lines.back()->setLine(x+3,y+((verticalSpace-16)/2),hier->getCenterPoint()->x()+(int)ceil((double)moduleWidth*0.5)+(int)floor((double)horizontalSpace*0.5),y+((verticalSpace-16)/2));
         ports[i]->addLineElem((QAbstractGraphicsShapeItem*)lines.back());
         lines.back()->show();
 		canvasView->scene()->addItem(lines.back());
-      }	
-      x += 7;	
+      }
+      x += 7;
     }
-    
+
     x = hier->getCenterPoint()->x() - (int) ceil((double)moduleWidth*0.5) +1;
     y = hier->getCenterPoint()->y() - (int) ceil((double)moduleHeight*0.5) +1;
     ports = hier->getWPorts();
@@ -1322,7 +1322,7 @@
 		pa[1] = QPoint(x+2,y);
 		pa[2] = QPoint(x+7,y);
 		pa[3] = QPoint(x+9,y+3);
-		pa[4] = QPoint(x+7,y+6); 
+		pa[4] = QPoint(x+7,y+6);
 		pa[5] = QPoint(x+2,y+6);
 		polygons[polygons.size()-1]->setPolygon(pa);
 		polygons[polygons.size()-1]->setPen(QPen(QColor(inoutPort)));
@@ -1342,19 +1342,19 @@
 	  	  lines.back()->show();
 		  canvasView->scene()->addItem(lines.back());
           lines.push_back(new QGraphicsLineItem());
-          if (ports[i]->getInitDir() == N) 
+          if (ports[i]->getInitDir() == N)
   	  	  {
             lines.back()->setLine(x-((horizontalSpace-16)/2),y+3,x-((horizontalSpace-16)/2),hier->getCenterPoint()->y()-(int)floor((double)moduleHeight*0.5)-(int)floor((double)verticalSpace*0.5));
 	    	lines.back()->show();
 			canvasView->scene()->addItem(lines.back());
-	      }  
-          else	
+	      }
+          else
  	      {
             lines.back()->setLine(x-((horizontalSpace-16)/2),y+3,x-((horizontalSpace-16)/2),hier->getCenterPoint()->y()+(int)ceil((double)moduleHeight*0.5)+(int)floor((double)verticalSpace*0.5));
 	    	lines.back()->show();
 			canvasView->scene()->addItem(lines.back());
-	  	  }  
-        }	
+	  	  }
+        }
         else
         {
           lines.push_back(new QGraphicsLineItem());
@@ -1364,9 +1364,9 @@
         }
         ports[i]->addLineElem((QAbstractGraphicsShapeItem*)lines.back());
       }
-      y += 7;	
+      y += 7;
     }
-    
+
     x = hier->getCenterPoint()->x() + (int) floor((double)moduleWidth*0.5);
     y = hier->getCenterPoint()->y() - (int) ceil((double)moduleHeight*0.5) +1;
     ports = hier->getEPorts();
@@ -1379,7 +1379,7 @@
     for(int i=0; i<ports.size(); i++)
     {
       y += abstand;
-      
+
       #ifdef DEBUG_GSYSC
       std::cout<<"Port-Nr "<<i<<" with name "<<ports[i]->getName()<<" is of type "<<ports[i]->getType()<<", x:"<<x<<", y:"<<y<<" || initDir: "<<ports[i]->getInitDir()<<",  dest: "<<ports[i]->getDest().x()<<"/"<<ports[i]->getDest().y()<<",  Dest is set? "<<!ports[i]->getDest().isNull()<<std::endl;
       #endif
@@ -1425,7 +1425,7 @@
 		pa[1] = QPoint(x-2,y);
 		pa[2] = QPoint(x-7,y);
 		pa[3] = QPoint(x-9,y+3);
-		pa[4] = QPoint(x-7,y+6); 
+		pa[4] = QPoint(x-7,y+6);
 		pa[5] = QPoint(x-2,y+6);
 		polygons[polygons.size()-1]->setPolygon(pa);
 		polygons[polygons.size()-1]->setPen(QPen(QColor(inoutPort)));
@@ -1446,19 +1446,19 @@
 	  lines.back()->show();
 	  canvasView->scene()->addItem(lines.back());
 	  lines.push_back(new QGraphicsLineItem());
-	  if (ports[i]->getInitDir() == N) 
+	  if (ports[i]->getInitDir() == N)
 	  {
 	    lines.back()->setLine(x+((horizontalSpace-16)/2),y+3,x+((horizontalSpace-16)/2),hier->getCenterPoint()->y()-(int)floor((double)moduleHeight*0.5)-(int)floor((double)verticalSpace*0.5));
 	    lines.back()->show();
 		canvasView->scene()->addItem(lines.back());
-	  }  
-	  else	
+	  }
+	  else
 	  {
 	    lines.back()->setLine(x+((horizontalSpace-16)/2),y+3,x+((horizontalSpace-16)/2),hier->getCenterPoint()->y()+(int)ceil((double)moduleHeight*0.5)+(int)floor((double)verticalSpace*0.5));
 	    lines.back()->show();
 		canvasView->scene()->addItem(lines.back());
-	  }  
-	}	
+	  }
+	}
 	else
 	{
 	  lines.push_back(new QGraphicsLineItem());
@@ -1468,7 +1468,7 @@
 	}
 	ports[i]->addLineElem((QAbstractGraphicsShapeItem*)lines.back());
       }
-      y += 7;	
+      y += 7;
     }
 
     lines.clear();
@@ -1483,7 +1483,7 @@
   {
     for(int i=0; i<hierarchyList.size(); i++)
       if(hierarchyList[i]==hier) return true;
-    return false;  
+    return false;
   }
 
   /*
@@ -1497,7 +1497,7 @@
     #ifdef DEBUG_GSYSC
     std::cout<<"Point 1:  "<<p1->x()<<"/"<<p1->y()<<";     Point 2:  "<<p2->x()<<"/"<<p2->y()<<std::endl;
     #endif
-    if(lfdNr > 2*dimFactor) 
+    if(lfdNr > 2*dimFactor)
     {
       std::cerr<<"ERROR:  endless recursion threatens in function 'drawConnStep'!!!!!"<<std::endl;
       return false;
@@ -1506,13 +1506,13 @@
     QList<QGraphicsItem*> cil = canvasView->scene()->items(*p1);
     QGraphicsRectItem *nodeRect = 0;
     for(int o=0; o<cil.size(); o++)
-    {	    
-      if(cil[o]->type() == QGraphicsRectItem::Type) 
+    {
+      if(cil[o]->type() == QGraphicsRectItem::Type)
       {
 	nodeRect = (QGraphicsRectItem*) cil[o];
-      }	
-    }  
-    if(nodeRect==0)  
+      }
+    }
+    if(nodeRect==0)
       nodeRect = new QGraphicsRectItem(p1->x()-11,p1->y()-11,24,24);
       nodeRect->setZValue(100);
       nodeRect->setPen(QPen(QColor(normalNode)));
@@ -1632,7 +1632,7 @@
     if (!left) x=2*sideMargin+dimFactor*moduleWidth+(dimFactor-1)*horizontalSpace-1;
     if(abstand<0) { if(abstand<=-21) abstand=-20; y-=abstand; }
     y = (nr+1)*abstand+nr*portHeight;
- 
+
     QFont smallerFont;
     smallerFont.setPointSize(8);
     QGraphicsPolygonItem *polygon = new QGraphicsPolygonItem();
@@ -1779,14 +1779,14 @@
     }
     polygon = 0;
   }
-  
+
   /*
    *   get hierarchy module that is drawn in this window
    */
   gsysHierarchy* gsysHierarchyWindow::getOwnHier()
   {
     return ownHierarchy;
-  }  
+  }
 
   /*
    *   get the sector in which the line between the points 'source' and 'dest'
@@ -1818,13 +1818,12 @@
       else
         if (abs((source->y()-dest->y()) / (source->x()-dest->x())) > 1.0) return NNE;
 	else return ENE;
-    else  
+    else
       if (source->y() < dest->y())
         if (abs((source->y()-dest->y()) / (source->x()-dest->x())) > 1.0) return SSW;
 	else return WSW;
       else
         if (abs((source->y()-dest->y()) / (source->x()-dest->x())) > 1.0) return NNW;
 	else return WNW;
-    return -1;	
+    return -1;
   }
-

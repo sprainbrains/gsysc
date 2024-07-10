@@ -27,8 +27,8 @@
 #include <QtWidgets/qtooltip.h>
 #include <QtWidgets/qwhatsthis.h>
 
-/* 
- *  Constructs a gsysBuffer as a child of 'parent', with the 
+/*
+ *  Constructs a gsysBuffer as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
  *
  *  The dialog will by default be modeless, unless you set 'modal' to
@@ -52,7 +52,7 @@ gsysBuffer::gsysBuffer( QWidget* parent, const char* name, bool modal, Qt::Windo
     gbLayoutList.clear();
 
     gsysBufferLayout = new QVBoxLayout(this);
-    gsysBufferLayout->setMargin(6);
+    gsysBufferLayout->setContentsMargins(6, 6, 6, 6);
     gsysBufferLayout->setSpacing(11);
 
     idList = (new gsysMain())->getRegModule()->getBufferIDs();
@@ -63,26 +63,26 @@ gsysBuffer::gsysBuffer( QWidget* parent, const char* name, bool modal, Qt::Windo
       QGroupBox* groupBox1 = new QGroupBox( "groupBox1", this );
       QVBoxLayout* groupBox1Layout = new QVBoxLayout(groupBox1); //Top
       groupBox1Layout->setSpacing(6);
-      groupBox1Layout->setMargin(11);
+      groupBox1Layout->setContentsMargins(11, 11, 11, 11);
       groupBox1Layout->setAlignment( Qt::AlignTop );
 
       QProgressBar* progressBar1 = new QProgressBar( groupBox1 );
-      
+
       QSpacerItem* spacer1 = new QSpacerItem(40,20,QSizePolicy::Minimum,QSizePolicy::Expanding);
       QSpacerItem* spacer2 = new QSpacerItem(40,20,QSizePolicy::Minimum,QSizePolicy::Expanding);
       groupBox1Layout->addItem( spacer1 );
-      
+
       groupBox1Layout->addWidget( progressBar1 );
       gsysBufferLayout->addWidget( groupBox1 );
-				   
+
       groupBox1Layout->addItem( spacer2 );
-      
+
       gboxList.push_back(groupBox1);
       groupBox1->setTitle(nameList[i]);
-      
+
       gbLayoutList.push_back(groupBox1Layout);
       groupBox1Layout->setAlignment( Qt::AlignTop );
-      
+
       pgList.push_back(progressBar1);
       progressBar1->setMaximum(100);
       progressBar1->setValue(0);
@@ -112,7 +112,7 @@ int gsysBuffer::getBufferIndex(void* id)
   #endif
   for(int i=0; i<idList.size(); i++)
     if(idList[i]==id) return i;
-  return -1;  
+  return -1;
 }
 
 /*
@@ -130,7 +130,7 @@ void gsysBuffer::refreshBuffer(void* id, int value, int maxValue)
     aktPg->setMaximum(maxValue);
     aktPg->setValue(value);
     aktPg = 0;
-  }  
+  }
 }
 
 /*
@@ -141,4 +141,3 @@ void gsysBuffer::languageChange()
 {
     setWindowTitle( tr( "Buffer variables" ) );
 }
-

@@ -22,8 +22,8 @@
 #include "gsysMain.h"
 #include "gsysSimulator.h"
 
-/* 
- *  Constructs a gsysPortViewer as a child of 'parent', with the 
+/*
+ *  Constructs a gsysPortViewer as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
  *
  *  The dialog will by default be modeless, unless you set 'modal' to
@@ -35,10 +35,10 @@ gsysPortViewer::gsysPortViewer( QWidget* parent, const char* name, bool modal, Q
 {
     setModal(modal);
     if ( !name ) setObjectName( "gsysPortViewer" );
-    gsysPortViewerLayout = new QVBoxLayout( this ); 
+    gsysPortViewerLayout = new QVBoxLayout( this );
     gsysPortViewerLayout->setObjectName("gsysPortViewerLayout");
     gsysPortViewerLayout->setSpacing(6);
-    gsysPortViewerLayout->setMargin(11);
+    gsysPortViewerLayout->setContentsMargins(11, 11, 11, 11);
 
     portVec.clear();
 
@@ -55,10 +55,10 @@ gsysPortViewer::gsysPortViewer( QWidget* parent, const char* name, bool modal, Q
     frame4->setObjectName("frame4");
     frame4->setFrameShape( QFrame::StyledPanel );
     frame4->setFrameShadow( QFrame::Raised );
-    frame4Layout = new QHBoxLayout( frame4); 
+    frame4Layout = new QHBoxLayout( frame4);
     frame4Layout->setObjectName("frame4Layout");
     frame4Layout->setSpacing(6);
-    frame4Layout->setMargin(11);
+    frame4Layout->setContentsMargins(11, 11, 11, 11);
 
 
     comboBox1 = new QComboBox( frame4 );
@@ -193,4 +193,3 @@ void gsysPortViewer::pushButton2_clicked()
   portVec.push_back(aktPort);
   table1->removeRow(table1->currentRow());
 }
-

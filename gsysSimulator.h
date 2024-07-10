@@ -55,7 +55,7 @@ class gsysPort;
 
 #include <stdio.h>
 #include <sstream>
-#include <vector> 
+#include <vector>
 
 using namespace std;
 
@@ -97,14 +97,14 @@ public:
   QLineEdit* watchValue;
 
 private:
-  
+
   int aktStep;
   bool toStop;
   bool hardStop;
   gsysHierarchyTree* hierTree;
   vector<gsysPort*> watchPorts;
 
-  gsysSimulator(); 
+  gsysSimulator();
 
   /*
    *  Constructs a gsysSimulator as a child of 'parent', with the
@@ -113,8 +113,8 @@ private:
    *  The dialog will by default be modeless, unless you set 'modal' to
    *  TRUE to construct a modal dialog.
    */
-  gsysSimulator( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0 );
-  
+  gsysSimulator( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
+
   bool haveToStop();
 
 public:
@@ -123,16 +123,16 @@ public:
   *  Destroys the object and frees any allocated resources
   */
   ~gsysSimulator();
-      
+
   char* asChar(int nr);
-  
+
   void openSim(int steps=1000);
   void start(int stepCount=1, sc_core::sc_time_unit unit = sc_core::SC_NS);
   void stop();
   void addPort(gsysPort* port);
   void clearPorts();
   bool stopped();
-  
+
 public slots:
   void autoStep_stateChanged( int );
   void useWatcher_stateChanged( int );
@@ -141,7 +141,7 @@ public slots:
   void stepButton_clicked();
   void maxSpin_valueChanged( int );
   void useViewer_stateChanged( int );
-  
+
 
 protected:
   QVBoxLayout* gsysSimulatorLayout;
@@ -152,7 +152,7 @@ protected slots:
    *  language.
    */
   void languageChange();
-							 
+
 };
 
 

@@ -22,9 +22,9 @@
     last modified: 2005-01-31
  *****************************************************************************
     Content:
-      This file defines all necessary macros to simplify the 
-      usage of gSysC for the programmer. 
- 
+      This file defines all necessary macros to simplify the
+      usage of gSysC for the programmer.
+
  *****************************************************************************/
 
 
@@ -46,18 +46,18 @@
 #include "gsysReplaced.h"
 #endif
 
-#include <qt5/QtWidgets/QApplication>
-#include <qt5/QtWidgets/QtWidgets>
-#include <qt5/QtCore/QTranslator>
-#include <qt5/QtCore/QTextCodec>
-#include <qt5/QtCore/QLocale>
+#include <QApplication>
+#include <QtWidgets>
+#include <QTranslator>
+#include <QTextCodec>
+#include <QLocale>
 
 
 
 /*****************************************************************************
- 
+
                             Macro Definitions
- 
+
  *****************************************************************************/
 
 /*############################################################################
@@ -84,7 +84,7 @@
 	wdw->show(); \
 	wdw->startSimulator(stepcount); \
 	app.exec();
-  #define REAL_sc_start(stepcount) sc_start(stepcount)	
+  #define REAL_sc_start(stepcount) sc_start(stepcount)
   #define REG_IN_PORT(port,module,signal) \
 	(new gsysMain())->getRegModule()->registerPort(port,module,signal);
   #define REG_OUT_PORT(port,module,signal) \
@@ -112,16 +112,16 @@
   #define gsys_refreshBuffer(id,akt,max) \
   	(new gsysMain())->refreshBuffer(id,akt,max);
 
-#else	
+#else
 
   #define gsys_start(stepcount) sc_start(stepcount)
   #define sc_start(stepcount) sc_start(stepcount)
-  #define REAL_sc_start(stepcount) sc_start(stepcount)	
-  #define REG_IN_PORT(port,module,signal) ; 
-  #define REG_OUT_PORT(port,module,signal) ; 
-  #define REG_INOUT_PORT(port,module,signal) ; 
-  #define REG_PORT(port,module,signal) ; 
-  #define REG_MODULE(module,name,parent) ; 
+  #define REAL_sc_start(stepcount) sc_start(stepcount)
+  #define REG_IN_PORT(port,module,signal) ;
+  #define REG_OUT_PORT(port,module,signal) ;
+  #define REG_INOUT_PORT(port,module,signal) ;
+  #define REG_PORT(port,module,signal) ;
+  #define REG_MODULE(module,name,parent) ;
   #define RENAME_PORT(renameObject,name) ;
   #define RENAME_SIGNAL(renameObject,name) ;
   #define gsys_open ;
@@ -129,14 +129,14 @@
   #define gsys_addBufferN(id,name) ;
   #define gsys_refreshBuffer(id,akt,max) ;
 
-#endif  
+#endif
 
 
 
 /*############################################################################
                      Interface Macros (non-functional)
  ############################################################################*/
- 
+
 #define GSYS_MODULE(parameter) SC_MODULE(parameter)
 #define GSYS_CTOR(parameter) SC_CTOR(parameter)
 #define GSYS_METHOD(parameter) SC_METHOD(parameter)
@@ -145,12 +145,12 @@
 
 
 #ifndef GSYS_DO_NOT_USE
-    #define gsys_in_clk 	gsys_in<bool> 
-    #define gsys_inout_clk 	gsys_inout<bool> 
-    #define gsys_out_clk 	gsys_out<bool> 
-    #define sc_in_clk 		gsys_in<bool> 
-    #define sc_inout_clk 	gsys_inout<bool> 
-    #define sc_out_clk 		gsys_out<bool> 
+    #define gsys_in_clk 	gsys_in<bool>
+    #define gsys_inout_clk 	gsys_inout<bool>
+    #define gsys_out_clk 	gsys_out<bool>
+    #define sc_in_clk 		gsys_in<bool>
+    #define sc_inout_clk 	gsys_inout<bool>
+    #define sc_out_clk 		gsys_out<bool>
     #define sc_inout		gsys_inout
     #define sc_in		gsys_in
     #define sc_out		gsys_out
@@ -164,5 +164,5 @@
     #define gsys_out_clk	sc_out_clk
     #define gsys_signal 	sc_signal
 #endif
-  
+
 #endif

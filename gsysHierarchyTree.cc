@@ -38,8 +38,8 @@
     gsysHierarchyTreeLayout = new QVBoxLayout( this );
     gsysHierarchyTreeLayout->setObjectName("gsysHierarchyTreeLayout");
     gsysHierarchyTreeLayout->setSpacing(6);
-    gsysHierarchyTreeLayout->setMargin(11);
-    
+    gsysHierarchyTreeLayout->setContentsMargins(11, 11, 11, 11);
+
     tree = new QTreeWidget(this);
     tree->setColumnCount(3);
     tree->setColumnWidth(0, 225);
@@ -59,7 +59,7 @@
     // signals and slots connections
     connect( openMod, SIGNAL( clicked() ), this, SLOT( openMod_clicked() ) );
   }
- 
+
   /*
    *   destructor
    */
@@ -71,7 +71,7 @@
     allConnections.clear();
     // Qt components get deleted by Qt
   }
- 
+
   /*
    *   method to test, whether the module that hier points to is open
    */
@@ -79,12 +79,12 @@
   {
     for (int i=0; i<windowOpen.size(); i++)
     {
-      if (hier==0) 
+      if (hier==0)
       {
         if (windowOpen[i]->getOwnHier() != 0) std::cout << "i: " << i << ";  OwnerHier: " << windowOpen[i]->getOwnHier()->getName() << ";  Parameter: 0"  << std::endl;
         else std::cout << "i: " << i << ";  OwnerHier: Root(NULL);  Parameter: 0" << std::endl;
       }
-      else 
+      else
         if (windowOpen[i]->getOwnHier() != 0) std::cout << "i: " << i << ";  OwnerHier: " << windowOpen[i]->getOwnHier()->getName() << ";  Parameter: " << hier->getName() << std::endl;
         else std::cout << "i: " << i << ";  OwnerHier: Root(NULL);  Parameter: " << hier->getName() << std::endl;
       if (windowOpen[i]->getOwnHier() == hier)
@@ -92,7 +92,7 @@
     }
     return 0;
   }
- 
+
   /*
    *   method to open the hierarchy window of the module that 'hierarchy' points to
    */
@@ -119,7 +119,7 @@
 	  hierWdw->setWindowTitle(isRoot?"Root":hierarchy->getName());
 	  if (!isRoot) hierWdw->initializeWdw(hierarchy,allHierarchies,allConnections,false);
 	  else hierWdw->initializeWdw(0,allHierarchies,allConnections,false);
-	  
+
 
 	  // signalizing the end of creation
 	  windowOpen.push_back(hierWdw);
@@ -135,7 +135,7 @@
 
     hierWdw = 0;
   }
-  
+
   /*
    *   eventHandler for button click of openModule-Button
    */
@@ -169,4 +169,3 @@
     allHierarchies = hier;
     allConnections = conn;
   }
-

@@ -76,7 +76,7 @@ public:
      *  Destroys the object and frees any allocated resources
      */
     ~gsysMainGUI();
-      
+
 
     QPushButton* pushButton4;
     QPushButton* pushButton5;
@@ -92,8 +92,8 @@ private:
      *  The dialog will by default be modeless, unless you set 'modal' to
      *  TRUE to construct a modal dialog.
      */
-    gsysMainGUI( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0);
-															  
+    gsysMainGUI( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
+
 public slots:
     void pushButton4_clicked();    // start simulator
     void pushButton5_clicked();    // Hierarchy-Viewer
@@ -110,7 +110,7 @@ protected slots:
      *  language.
      */
     void languageChange();
-  
+
 };
 
 

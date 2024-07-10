@@ -7,6 +7,9 @@ project(gSysC
 
 OPTION(STATIC_CHECK "Use clang-tidy to check compiled files." OFF)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 IF(STATIC_CHECK)
     set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=*,-google-*,-android-*,-openmp-*,-zircon-*,)
 ENDIF()
@@ -16,7 +19,7 @@ find_package(SystemC REQUIRED)
 find_package(Threads REQUIRED)
 
 set(CMAKE_AUTOMOC ON)
-find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED )
+find_package(Qt6 COMPONENTS Core Gui Widgets Core5Compat REQUIRED )
 
 add_library(gsysc STATIC
     "gsysConnection.cc" "gsysHierarchy.cc" "gsysHierarchyTree.cc" "gsysHierarchyWindow.cc" "gsysRegister.cc"
@@ -32,11 +35,11 @@ target_compile_options(gsysc
 target_include_directories(gsysc
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
     PRIVATE ${SYSTEMC_INCLUDE_DIRS}
-    PRIVATE Qt5Widget_INCLUDE_DIR
+    PRIVATE Qt6Widget_INCLUDE_DIR
 )
 
 target_link_libraries(gsysc
-    PRIVATE Qt5::Gui Qt5::Core Qt5::Widgets
+    PRIVATE Qt6::Gui Qt6::Core Qt6::Widgets Qt6::Core5Compat
     PRIVATE "${SYSTEMC_LIBRARIES}"
     PRIVATE Threads::Threads
 )

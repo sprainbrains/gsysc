@@ -50,7 +50,7 @@ class gsysPort;
 class gsysPortViewer : public QDialog
 {
     friend class gsysMainGUI;
-  
+
     Q_OBJECT
 
 private:
@@ -58,7 +58,7 @@ private:
     vector<gsysPort*> portVec;
 
 public:
-    gsysPortViewer( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0 );
+    gsysPortViewer( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
     ~gsysPortViewer();
 
     QTableWidget* table1;

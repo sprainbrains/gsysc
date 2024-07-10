@@ -22,7 +22,7 @@
  ****************************************************************************
     Content:
       This file provides buffer variable visualization over progree bars.
-      All such bars are organized in GroupBoxes for giving visible 
+      All such bars are organized in GroupBoxes for giving visible
       separation.
 
  ***************************************************************************/
@@ -51,13 +51,13 @@ class gsysBuffer : public QDialog
 {
     friend class gsysMain;
     friend class gsysMainGUI;
-    
+
     Q_OBJECT
 
 private:
-    gsysBuffer( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0 );
+    gsysBuffer( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
     ~gsysBuffer();
-    
+
     // List of all ProgressBars
     vector<QProgressBar*> pgList;
     // List of all identification numbers of the Prog.Bars
@@ -71,7 +71,7 @@ private:
     void refreshBuffer(void* id, int value, int maxValue);
 
 protected:
- 
+
     QVBoxLayout* gsysBufferLayout;
 
 protected slots:

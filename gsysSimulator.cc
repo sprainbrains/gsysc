@@ -18,7 +18,7 @@
 
 #include "gsysSimulator.moc"
 #include "gsysSimulator.h"
-#include "gsysMainGUI.h"  
+#include "gsysMainGUI.h"
 #include "gsysPortViewer.h"
 #include "gsysConnection.h"
 #include "gsysHierarchyTree.h"
@@ -41,9 +41,9 @@
     gsysSimulatorLayout = new QVBoxLayout( this );
     gsysSimulatorLayout->setObjectName("gsysSimulatorLayout");
     gsysSimulatorLayout->setSpacing(6);
-    gsysSimulatorLayout->setMargin(11);
-    
-    
+    gsysSimulatorLayout->setContentsMargins(11, 11,11,11);
+
+
     /** Initialization block **/
     aktStep = 0;
     #ifdef DEBUG_GSYSC
@@ -51,7 +51,7 @@
     #endif
     toStop = false;
     hierTree = 0;
-	
+
     groupBox1 = new QGroupBox( "groupBox1", this );
     groupLayout1 = new QGridLayout();
     groupLayout1->addLayout(groupBox1->layout(), 0, 0);
@@ -78,7 +78,7 @@
 
     groupBox1->setLayout(groupLayout1);
     groupBox1->layout()->setSpacing( 6 );
-    groupBox1->layout()->setMargin( 11 );
+    groupBox1->layout()->setContentsMargins( 11, 11, 11, 11 );
     gsysSimulatorLayout->addWidget( groupBox1 );
 
     groupBox2 = new QGroupBox( "groupBox2", this );
@@ -88,7 +88,7 @@
 
     stepButton = new QPushButton( "stepButton" );
     groupLayout2->addWidget( stepButton, 0, 0 );
-    
+
     startButton = new QPushButton( "startButton" );
     groupLayout2->addWidget( startButton, 0, 1 );
 
@@ -97,18 +97,18 @@
 
     groupBox2->setLayout(groupLayout2);
     groupBox2->layout()->setSpacing( 6 );
-    groupBox2->layout()->setMargin( 11 );
+    groupBox2->layout()->setContentsMargins( 11, 11, 11, 11 );
     gsysSimulatorLayout->addWidget( groupBox2 );
 
     groupBox3 = new QGroupBox( "groupBox3", this );
     groupBox3->setLayout(new QVBoxLayout(groupBox3));
     groupBox3->layout()->setSpacing( 6 );
-    groupBox3->layout()->setMargin( 11 );
+    groupBox3->layout()->setContentsMargins( 11, 11, 11, 11 );
 
     useViewer = new QCheckBox( "useViewer", groupBox3 );
     useViewer->setChecked( false );
     groupBox3->layout()->addWidget( useViewer );
-						
+
     autoStep = new QCheckBox( "autoStep", groupBox3 );
     groupBox3->layout()->addWidget( autoStep );
 
@@ -116,7 +116,7 @@
     groupBox4->setEnabled( false );
     groupBox4->setLayout(new QVBoxLayout(groupBox4));
     groupBox4->layout()->setSpacing( 6 );
-    groupBox4->layout()->setMargin( 11 );
+    groupBox4->layout()->setContentsMargins( 11, 11, 11, 11 );
 
     textLabel3 = new QLabel( "textLabel3", groupBox4 );
     textLabel3_2 = new QLabel( "textLabel3_2", groupBox4 );
@@ -127,7 +127,7 @@
     intervalSpin->setEnabled( false );
     intervalSpin->setValue(10);
     intervalSpin->setMinimum( 1 );
-    
+
     groupBox4->layout()->addWidget( intervalSpin );
     groupBox4->layout()->addWidget( textLabel3_2 );
     groupBox3->layout()->addWidget( groupBox4 );
@@ -140,7 +140,7 @@
     groupBox5->setEnabled( false );
     groupBox5->setLayout(new QVBoxLayout(groupBox5));
     groupBox5->layout()->setSpacing( 6 );
-    groupBox5->layout()->setMargin( 11 );
+    groupBox5->layout()->setContentsMargins( 11, 11, 11, 11 );
 
     watchVariable = new QComboBox( groupBox5 );
     watchVariable->setObjectName("watchVariable");
@@ -149,7 +149,7 @@
     watchVarPolicy->setHorizontalStretch( 0 );
     watchVarPolicy->setVerticalStretch( 0 );
     watchVarPolicy->setHeightForWidth( watchVariable->sizePolicy().hasHeightForWidth() );
-    
+
     watchVariable->setSizePolicy( *watchVarPolicy );
     watchVariable->setMinimumSize( QSize( 0, 0 ) );
     groupBox5->layout()->addWidget( watchVariable );
@@ -163,7 +163,7 @@
     QSpacerItem* spacer_11 = new QSpacerItem( 20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding );
     gsysSimulatorLayout->addItem( spacer_11 );
 
-   
+
     languageChange();
     resize( QSize(323, 350).expandedTo(minimumSizeHint()) );
 
@@ -230,15 +230,15 @@
     {
       (new gsysMain())->getRegModule()->saveAllPortValues();
       sc_start(timeValue, unit);
-      aktStep += timeValue;   
+      aktStep += timeValue;
       if(autoStep->isChecked())
       {
         setWindowTitle( tr( "Simulator - steps done: " ).append(asChar(aktStep)) );
 	      (new gsysMain())->getMainWindow()->getPortViewer()->refresh();
         if(useViewer->isChecked())
           (new gsysMain())->getRegModule()->showChanges();
-      }	
-      
+      }
+
       if (useWatcher->isChecked())   // use port observation
       {
         if (strcmp(watchPorts[watchVariable->currentIndex()]->getValue(),watchValue->text().toLocal8Bit().data()) == 0)
@@ -250,7 +250,7 @@
           (new gsysMain())->getRegModule()->showChanges();
           if(useViewer->isChecked())
             (new gsysMain())->getRegModule()->showChanges();
-	      }  
+	      }
       }
     }
     if (haveToStop() && !hardStop)
@@ -258,7 +258,7 @@
       // do value-Save for being able to detect changes in the last step
       (new gsysMain())->getRegModule()->saveAllPortValues();
       sc_start(timeValue, unit);
-      aktStep += timeValue;    
+      aktStep += timeValue;
       hardStop = true;
       setWindowTitle( tr( "Simulator - steps done: " ).append(asChar(aktStep)) );
 	    (new gsysMain())->getMainWindow()->getPortViewer()->refresh();
@@ -268,7 +268,7 @@
   }
 
   /*
-   *   stops the simulation, means, the toStop variable is set and 
+   *   stops the simulation, means, the toStop variable is set and
    *   the next time it is evaluated, the simulation stops
    */
   void gsysSimulator::stop()
@@ -338,7 +338,7 @@
   {
     stop();
   }
-    
+
   /*
    *   method to translate the given int value 'nr' to a c_string
    */
@@ -361,7 +361,7 @@
   }
 
   /*
-   *   method to add the port, 'port' points to, 
+   *   method to add the port, 'port' points to,
    *   to the list of ports, that can be watched for equality with
    *   the value in the text field for the option 'abort simulation if ...'
    */
@@ -404,10 +404,9 @@
     groupBox3->setTitle( tr( "Options", "additional preferences" ) );
     useViewer->setText( tr( "Use &Hierarchy-Viewer" ) );
     autoStep->setText( tr( "&Automated steps" ) );
-    groupBox4->setTitle( QString::null );
+    groupBox4->setTitle( tr( "" ) );
     textLabel3->setText( tr( "Time interval" ) );
     useWatcher->setText( tr( "A&bort simulation, if ..." ) );
-    groupBox5->setTitle( QString::null );
+    groupBox5->setTitle( tr( "" ) );
     textLabel1_2->setText( "=" );
  }
-

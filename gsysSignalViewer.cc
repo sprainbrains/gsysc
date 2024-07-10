@@ -19,8 +19,8 @@
 #include "gsysSignalViewer.moc"
 #include "gsysSignalViewer.h"
 
-/* 
- *  Constructs a gsysSignalViewer as a child of 'parent', with the 
+/*
+ *  Constructs a gsysSignalViewer as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
  *
  *  The dialog will by default be modeless, unless you set 'modal' to
@@ -32,10 +32,10 @@ gsysSignalViewer::gsysSignalViewer( QWidget* parent, int portCount, const char* 
 {
     setModal(modal);
     if ( !name ) setObjectName( "gsysSignalViewer" );
-    gsysSignalViewerLayout = new QVBoxLayout( this ); 
+    gsysSignalViewerLayout = new QVBoxLayout( this );
     gsysSignalViewerLayout->setObjectName("gsysSignalViewerLayout");
     gsysSignalViewerLayout->setSpacing(6);
-    gsysSignalViewerLayout->setMargin(11);
+    gsysSignalViewerLayout->setContentsMargins(11, 11, 11, 11);
 
     groupBoxList.clear();
     textLabelList.clear();
@@ -67,12 +67,12 @@ gsysSignalViewer::gsysSignalViewer( QWidget* parent, int portCount, const char* 
 
       groupBoxList.back()->setLayout(gridLayout);
       groupBoxList.back()->layout()->setSpacing( 6 );
-      groupBoxList.back()->layout()->setMargin( 11 );
+      groupBoxList.back()->layout()->setContentsMargins( 11, 11, 11, 11 );
       gsysSignalViewerLayout->addWidget(groupBoxList.back());
     }
 
     groupBox3 = new QGroupBox( "groupBox3", this );
-    
+
     groupBox3Layout = new QGridLayout();
     groupBox3Layout->addLayout(groupBox3->layout(), 0, 0);
     groupBox3Layout->setAlignment( Qt::AlignTop );
@@ -93,7 +93,7 @@ gsysSignalViewer::gsysSignalViewer( QWidget* parent, int portCount, const char* 
 
     groupBox3->setLayout(groupBox3Layout);
     groupBox3->layout()->setSpacing( 6 );
-    groupBox3->layout()->setMargin( 11 );
+    groupBox3->layout()->setContentsMargins( 11, 11, 11, 11 );
     gsysSignalViewerLayout->addWidget( groupBox3 );
 
     languageChange();
@@ -120,12 +120,12 @@ void gsysSignalViewer::languageChange()
       ostringstream ostr;
       ostr << (i+1) << ends;
       groupBoxList[i]->setTitle( tr( "Module" ).append(ostr.str().c_str()) );
-    }  
+    }
     for(int i=0; i<textLabelList.size(); i++)
     {
       if(i % 2 == 0)   // i gerade
         textLabelList[i]->setText( tr( "Name:" ) );
-      else	
+      else
         textLabelList[i]->setText( tr( "Port name:" ) );
     }
     groupBox3->setTitle( tr( "Signal" ) );

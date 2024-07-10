@@ -51,13 +51,13 @@ class gsysSignalViewer : public QDialog
     Q_OBJECT
 
 private:
-    gsysSignalViewer( QWidget* parent, int portCount=2, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0 );
+    gsysSignalViewer( QWidget* parent, int portCount=2, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
     ~gsysSignalViewer();
 
     vector<QGroupBox*> groupBoxList;
     vector<QLabel*> textLabelList;
     vector<QLineEdit*> lineEditList;
-		    
+
     QGridLayout* gridLayout;
     QGroupBox* groupBox3;
     QLabel* textLabel3;

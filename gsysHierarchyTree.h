@@ -24,7 +24,7 @@
       This class is the parent module of the single HierarchyViewer windows.
       Its main task is showing and managing the HierarchyViewer windows, and
       providing a textual overview over the underlying SystemC project.
-      
+
  *****************************************************************************/
 
 
@@ -58,23 +58,23 @@ class gsysHierarchyTree : public QDialog
   friend class gsysSignal;
   friend class gsysSimulator;
   friend class gsysCanvasView;
-  
+
   Q_OBJECT
-  
+
   private:
- 
+
   vector<gsysHierarchyWindow*> windowOpen;
   vector<gsysHierarchy*> allHierarchies;
   vector<gsysConnection*> allConnections;
-  
-  gsysHierarchyTree( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0 ); 
+
+  gsysHierarchyTree( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
 
   gsysHierarchyWindow* isOpen(gsysHierarchy* hier);
-  
+
   ~gsysHierarchyTree();
 
   void openWindow(gsysHierarchy *hierarchy);
-  
+
   void setInfoVectors(vector<gsysHierarchy*> hier, vector<gsysConnection*> conn);
 
   QPushButton *openMod;
@@ -82,7 +82,7 @@ class gsysHierarchyTree : public QDialog
   QSpacerItem *spacer;
 
   public slots:
-  
+
   void openMod_clicked();
 
   protected:
@@ -96,4 +96,3 @@ class gsysHierarchyTree : public QDialog
 };
 
 #endif
-

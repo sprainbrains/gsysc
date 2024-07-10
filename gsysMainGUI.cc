@@ -16,7 +16,7 @@
 ** Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-#include "gsysMainGUI.moc" 
+#include "gsysMainGUI.moc"
 #include "gsysMainGUI.h"
 #include "gsysAbout.h"
 #include "gsysSimulator.h"
@@ -47,7 +47,7 @@
       simulator->move(this->width()+8,0);
       simulator->openSim(steps);
     }
-    
+
     /*
      *   open the HierarchyTree window
      */
@@ -71,7 +71,7 @@
       portViewer->move(this->width()+8+simulator->width()+8,0);
       portViewer->show();
     }
-   
+
     /*
      *   open the About window
      */
@@ -105,7 +105,7 @@
       delete aboutWdw; aboutWdw = 0;
       delete bufferWdw; bufferWdw = 0;
     }
-      
+
 
     /*
      *  Constructs a gsysMain as a child of 'parent', with the
@@ -123,10 +123,10 @@
       portViewer = NULL;
       bufferWdw = 0;
       setModal(modal);
-      
+
       gsysMainGUILayout = new QVBoxLayout( this );
       gsysMainGUILayout->setSpacing(6);
-      gsysMainGUILayout->setMargin(11);
+      gsysMainGUILayout->setContentsMargins(11, 11, 11, 11);
 
       pushButton4 = new QPushButton( "pushButton4", this );
       gsysMainGUILayout->addWidget( pushButton4 );
@@ -160,16 +160,16 @@
       connect( pushButton6, SIGNAL( clicked() ), this, SLOT( pushButton6_clicked() ) );
     }
 
-    /* 
+    /*
      *   get pointer to the PortViewer window
      */
     gsysPortViewer* gsysMainGUI::getPortViewer()
     {
       if(portViewer==NULL)
         portViewer = new gsysPortViewer(this);
-      return portViewer;	
+      return portViewer;
     }
-															  
+
     /*
      *   EventHandler for startSimulator-Button
      */
@@ -177,7 +177,7 @@
     {
       startSimulator(-1);
     }
-    
+
     /*
      *   EventHandler for startHierarchyViewer button
      */
@@ -185,7 +185,7 @@
     {
       startHierarchyTree();
     }
-    
+
     /*
      *   Event-Handler for startPortViewer-button
      */
@@ -193,7 +193,7 @@
     {
       startPortViewer();
     }
-    
+
     /*
      *   EventHandler for startBuffer-button
      */
@@ -201,7 +201,7 @@
     {
       openBufferWdw();
     }
-    
+
     /*
      *   EventHandler for the About-window button
      */
@@ -218,7 +218,7 @@
       if (simulator == 0) simulator = new gsysSimulator(this);
       return simulator;
     }
-    
+
     /*
      *   create a HierarchyTree window if necessary and return a pointer to it
      */
@@ -236,7 +236,7 @@
       if(bufferWdw==0) bufferWdw=new gsysBuffer(this);
       return bufferWdw;
     }
-    
+
 
     /*
      *  Sets the strings of the subwidgets using the current
@@ -251,5 +251,3 @@
       pushButton9->setText( tr( "&Buffer variables" ) );
       pushButton6->setText( tr( "About &gSysC" ) );
     }
-			   
-

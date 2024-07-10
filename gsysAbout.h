@@ -47,7 +47,7 @@ class gsysAbout : public QDialog
     Q_OBJECT
 
 private:
-    gsysAbout( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0 );
+    gsysAbout( QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
     ~gsysAbout();
 
     QLabel* pixmapLabel1_2;

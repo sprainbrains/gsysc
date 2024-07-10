@@ -79,7 +79,7 @@ class gsysCanvasView;
 
 using namespace std;
 
-class gsysHierarchyWindow : public QDialog 
+class gsysHierarchyWindow : public QDialog
 {
   friend class gsysHierarchyTree;
   friend class gsysCanvasView;
@@ -89,11 +89,11 @@ class gsysHierarchyWindow : public QDialog
   Q_OBJECT
 
   private:
-  
+
   vector<gsysHierarchy*> hierarchyList;
   vector<gsysConnection*> connList;        // Connections inside of this level
   vector<gsysConnection*> sideConnList;    // Connections to outer elements
-  gsysHierarchyWindow( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = 0 );
+  gsysHierarchyWindow( QWidget* parent, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowFlags());
   gsysHierarchy* parent;
   gsysHierarchy* ownHierarchy;
   int dimFactor;
@@ -104,7 +104,7 @@ class gsysHierarchyWindow : public QDialog
   void drawConnections();
   bool drawConnStep(gsysConnection* connection,QPoint *p1, QPoint *p2,int lfdNr);
   bool thisLevel(gsysHierarchy* hier);
- 
+
   // values to be read from file 'gsysHViewer.conf'
   int sideMargin;
   int topMargin;
@@ -124,7 +124,7 @@ class gsysHierarchyWindow : public QDialog
   bool mmSigPortShow;
 
   void readConfig();
- 
+
   QPushButton *saveButton;
   QGroupBox* moveInfos;
   QLabel* labelKoordinaten;
@@ -134,7 +134,7 @@ class gsysHierarchyWindow : public QDialog
   QLabel* labelWert;
   QLineEdit* lineEditWert;
   QHBoxLayout* moveInfosLayout;
-  
+
   char* normalSignal;
   char* normalNode;
   char* activeSignal;
@@ -163,4 +163,3 @@ class gsysHierarchyWindow : public QDialog
 
 
 #endif
-
